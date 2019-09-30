@@ -7,16 +7,42 @@
 // like this:
 // https://s1.whiteboardfox.com/s/2ae37dc832647bad.png
 
-
-
-
 main() {
+
   // Exercise 2:  Create the object structure shown in the above link
   // including the variable called 'firstLink'
+  Link firstLink = new Link("Raj");
+  firstLink.next = new Link("Arnav");
+  firstLink.next.next = new Link("Paul");
 
+  Values(firstLink);
 }
 
+  String Values(Link link) {
+    print(link.value);
+    print(link.next.value);
+    print(link.next.next.value);
+  }
 
+  void addValue(Link link, String value){
+    link.next.next.next.value = new Link(value);
+
+  }
+
+  class Link {
+    String value;
+    var next;
+
+    Link(String value, [var next]) {
+      this.value = value;
+      this.next = null;
+    }
+
+
+
+
+
+  }
 // Exercise 3: Create a function which takes a Link parameter and prints out
 // all the values in the list.  For example, if the function is given the
 // firstLink variable, then it will print:
