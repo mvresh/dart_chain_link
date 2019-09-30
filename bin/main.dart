@@ -7,6 +7,7 @@
 // like this:
 // https://s1.whiteboardfox.com/s/2ae37dc832647bad.png
 
+
 main() {
 
   // Exercise 2:  Create the object structure shown in the above link
@@ -15,19 +16,29 @@ main() {
   firstLink.next = new Link("Arnav");
   firstLink.next.next = new Link("Paul");
 
-  Values(firstLink);
+  values(firstLink);
 }
 
-  String Values(Link link) {
-    print(link.value);
-    print(link.next.value);
-    print(link.next.next.value);
+  String values(Link link) {
+    while(link.next != null){
+        print(link.value);
+        link = link.next;
+    }
+        print(link.value);
+    }
+    //print(link.value);
+    //print(link.next.value);
+    //print(link.next.next.value);
+
+  void addValue(Link link, String element){
+
+    while(link.next != null){
+      print(link.value);
+      link = link.next;
+    }
+    link.next = new Link(element);
   }
 
-  void addValue(Link link, String value){
-    link.next.next.next.value = new Link(value);
-
-  }
 
   class Link {
     String value;
